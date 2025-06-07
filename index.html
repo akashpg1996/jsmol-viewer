@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSmol Viewer</title>
+  <script type="text/javascript" src="jsmol/JSmol.min.js"></script>
+</head>
+<body>
+  <h2>My JSmol Viewer</h2>
+  <script type="text/javascript">
+    var Info = {
+      width: 400,
+      height: 400,
+      use: "HTML5",
+      j2sPath: "jsmol/j2s",
+      script: "load caffeine.mol;",
+      debug: false
+    };
+    Jmol.getApplet("jsmolApplet0", Info);
+  </script>
+  <div id="jsmolApplet0" class="JmolApplet"></div>
+</body>
+</html>
+
