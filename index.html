@@ -7,12 +7,20 @@
 <body>
   <h2>My JSmol Viewer</h2>
   <script type="text/javascript">
-    var Info = {
-      width: 400,
-      height: 400,
-      use: "HTML5",
-      j2sPath: "jsmol/src/j2s",
-      script: "load CH3I.xyz;",
+    var Info = {      
+      width: 800, // increase size
+      height: 600,
+      use: "HTML5",           // use HTML5 canvas
+      j2sPath: "jsmol/src/j2s",  // path to j2s/core.z.js etc.
+      script: `
+        load CH3I.xyz;
+        set antialiasDisplay true;
+        set cartoonFancy true;
+        set ambientPercent 30;
+        set diffusePercent 60;
+        set specular true;
+        set specularPower 100;
+      `,
       debug: false
     };
     Jmol.getApplet("jsmolApplet0", Info);
