@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSmol Viewer</title>
+  <script type="text/javascript" src="../jsmol/src/JSmol.min.js"></script>
+</head>
+<body>
+  <h2>SN2 reaction</h2>
+  <script type="text/javascript">
+    var Info = {      
+      width: 800, // increase size
+      height: 600,
+      use: "HTML5",           // use HTML5 canvas
+      j2sPath: "../jsmol/src/j2s",  // path to j2s/core.z.js etc.
+      script: `
+        load CH3I_CN_InDirect.xyz;
+        set antialiasDisplay false;
+        set cartoonFancy true;
+        set ambientPercent 30;
+        set diffusePercent 60;
+        set specular true;
+        set specularPower 100;
+      `,
+      debug: false
+    };
+    Jmol.getApplet("jsmolApplet0", Info);
+  </script>
+  <div id="jsmolApplet0" class="JmolApplet"></div>
+</body>
+</html>
