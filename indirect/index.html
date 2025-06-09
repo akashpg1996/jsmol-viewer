@@ -5,26 +5,36 @@
   <script type="text/javascript" src="../jsmol/src/JSmol.min.js"></script>
 </head>
 <body>
-  <h2>SN2 reaction</h2>
+
+  <!-- Place the div BEFORE calling getApplet -->
+  <div id="jsmolApplet0" class="JmolApplet"></div>
+
   <script type="text/javascript">
     var Info = {      
-      width: 800, // increase size
+      width: 600,
       height: 600,
-      use: "HTML5",           // use HTML5 canvas
-      j2sPath: "../jsmol/src/j2s",  // path to j2s/core.z.js etc.
+      use: "HTML5",
+      j2sPath: "../jsmol/src/j2s",
       script: `
         load CH3I_CN_InDirect.xyz;
-        set antialiasDisplay false;
-        set cartoonFancy true;
-        set ambientPercent 30;
-        set diffusePercent 60;
-        set specular true;
-        set specularPower 100;
+        animation fps 50;
+        animation mode loop;
+        animation on;
+        reset;
+        rotate z -172.08;
+        rotate y 80.92;
+        rotate z -177.3;
+        zoom 100;
       `,
-      debug: false
+      debug: false,
+      addSelectionOptions: false,
+      serverURL: "https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
+      readyFunction: function(applet) {
+        console.log("JSmol applet loaded");
+      }
     };
     Jmol.getApplet("jsmolApplet0", Info);
   </script>
-  <div id="jsmolApplet0" class="JmolApplet"></div>
+
 </body>
 </html>
