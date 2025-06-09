@@ -12,8 +12,8 @@
 height: 600,
 use: "HTML5",
 j2sPath: "../jsmol/src/j2s",
-script: `
-  load CH3I_CN_Direct.xyz;
+script: 
+  `load CH3I_CN_Direct.xyz;
   // Animation settings
   animation fps 50;
   animation mode loop;
@@ -24,7 +24,7 @@ script: `
   rotate x 90;
   rotate y 45;
   zoom 120;
-     ,
+     `,
       debug: false
     };
     Jmol.getApplet("jsmolApplet0", Info);
